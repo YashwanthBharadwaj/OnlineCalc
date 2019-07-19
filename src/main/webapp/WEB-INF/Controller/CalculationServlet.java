@@ -28,7 +28,12 @@ public class CalculationServlet extends HttpServlet {
 
         if (firstNumber.length() == 0 || secondNumber.length() == 0 || operator.length() == 0){
             message = "Please fill all boxes and choose an action ";
+            url = "/WEB-INF/View/calculation_page.jsp";
+        }
+        else{
+            message = "";
             url = "";
+
         }
 
 
