@@ -6,8 +6,8 @@
 
 <h1>Welcome to online calculator </h1>
 
-<p>Please enter two numbers with operator <br>
-"for example: 2 + 5" and push button - Calculate
+<p>Please enter two numbers and choose the operator <br>
+(for example: 2, 5 and "sum") and push the button - Calculate
 </p>
 
 <form action="calc" method="post">

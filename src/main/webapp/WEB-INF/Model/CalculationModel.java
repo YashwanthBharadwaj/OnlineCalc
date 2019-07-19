@@ -20,28 +20,29 @@ public class CalculationModel {
     }
 
     public String getResultNUmber (){
-        result = "No matches";
-        try {
-            switch (action) {
-                case "sum":
-                    result = String.valueOf(Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber));
-                    return result;
+        result = "Something Wrong! Check the input data";
+        if (action != null & firstNumber.length() > 0 & !firstNumber.matches("[A-Za-z]+") & secondNumber.length() > 0 & !secondNumber.matches("[A-Za-z]+")) {
+            try {
+                switch (action) {
+                    case "sum":
+                        result = String.valueOf(Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber));
+                        return result;
 
-                case "multiply":
-                    result = String.valueOf(Integer.parseInt(firstNumber) * Integer.parseInt(secondNumber));
-                    return result;
+                    case "multiply":
+                        result = String.valueOf(Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber));
+                        return result;
 
-                case "dev":
-                    result = String.valueOf(Integer.parseInt(firstNumber) / Integer.parseInt(secondNumber));
-                    return result;
+                    case "dev":
+                        result = String.valueOf(Double.parseDouble(firstNumber) / Double.parseDouble(secondNumber));
+                        return result;
 
-                case "subtract":
-                    result = String.valueOf(Integer.parseInt(firstNumber) - Integer.parseInt(secondNumber));
-                    return result;
+                    case "subtract":
+                        result = String.valueOf(Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber));
+                        return result;
+                }
+            } catch (ArithmeticException e) {
+                e.printStackTrace();
             }
-        }
-        catch (ArithmeticException e){
-            e.printStackTrace();
         }
         return result;
     }
